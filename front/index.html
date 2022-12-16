@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Findera</title>
+
+
+    <!-- CSS JS bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+
+    <!-- <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script> -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css" rel="stylesheet" />
+    <!-- MDB -->
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script> -->
+
+
+    <!-- local imports -->
+    <link rel="stylesheet" href="./style.css">
+
+
+
+
+</head>
+
+<body>
+
+
+    <!-- topbar ve icindeki link butonları -->
+    <div class="topbar-wrapper">
+        <br>
+        <h1 class="firsth">Findera</h1>
+        <ul class="topbar">
+            <li id="homebtn" class="topbarbtn activebtn" onclick="openTab(event, 'home')">
+                <a>Home</a>
+            </li>
+            <li id="loginbtn" class="topbarbtn" onclick="openTab(event, 'login')">
+                <a>Login</a>
+            </li>
+            
+            <li  id="bichartsbtn"class="topbarbtn" onclick="openTab(event, 'bicharts')" style="display: none;">
+                <a>BI Charts</a>
+            </li>
+
+            <li id="findcoursebtn" class="topbarbtn" onclick="openTab(event, 'findcourse')" style="display: none;">
+                <a>Find Course</a>
+            </li>
+
+            <li  id="howtobtn"class="topbarbtn" onclick="openTab(event, 'howto')" style="display: none;">
+                <a>How To Use?</a>
+            </li>
+
+            <li id="aboutusbtn" class="topbarbtn" onclick="openTab(event, 'aboutus')" style="display: none;">
+                <a>About Us</a>
+            </li>
+            <li id="logoutbtn" class="topbarbtn" onclick="openTab(event, 'logouttab')" style="display: none;">
+                <a>Logout</a>
+            </li>
+        </ul>
+    </div>
+
+
+    <div id="home" class="tabcontent middle">
+        <br>
+        <h1 style="text-align : center">Welcome to Our DSS Project!</h1>
+        <br>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem fugit quo enim deserunt aliquid sapiente
+            vitae facere amet. Natus non illum tenetur mollitia libero harum ex reiciendis molestias cum. Veritatis,
+            quidem. Eveniet laudantium totam quam illum consectetur labore aliquam fugiat, velit exercitationem itaque
+            cupiditate delectus ea asperiores, similique tempora neque repudiandae dicta alias officiis dolores enim, ab
+            unde. Quos, repellendus. Veniam quos natus magnam aliquam, quasi dolores blanditiis non sequi enim
+            perspiciatis a possimus aut, unde facilis? Blanditiis odio molestias eius inventore possimus atque ea iusto
+            non voluptatum repellendus amet eaque eum ullam ipsa eveniet reiciendis quibusdam ratione velit neque
+            deserunt est corrupti, officiis saepe harum. Debitis ea mollitia quia dolorum aut iusto, dolorem
+            necessitatibus blanditiis, dolor minus sapiente consequuntur. Ex ut vel sapiente odio repudiandae, doloribus
+            quibusdam beatae nihil accusantium placeat, ducimus quaerat incidunt ipsam asperiores possimus minima
+            deserunt? Numquam veniam ullam sequi placeat nam, hic tenetur ea non aliquid distinctio vero cumque aut
+            voluptatum? Quaerat perferendis amet quas. Nihil provident eveniet fugiat veritatis perspiciatis vero
+            accusantium repellat totam cumque maxime, quibusdam ratione minus quaerat, voluptas minima harum deserunt,
+            quas alias quasi nam cum optio accusamus omnis. Nesciunt doloribus blanditiis natus sit numquam amet
+            eligendi optio, odit dignissimos reiciendis quia quam ratione eveniet accusantium, sunt deleniti magni
+            repudiandae, quis fugiat. Fugit suscipit, provident ullam aperiam vel dignissimos minus deleniti enim illum
+            molestiae impedit voluptate eligendi quos quis. Sequi cum animi ducimus, minus quas quam facilis! Dolore
+            assumenda nulla minima et quasi odio, in nobis doloribus. Voluptatum dolorum ipsa nam.</p>
+    </div>
+
+    <!-- Login start -->
+    <div id="login" class="tabcontent middle" style="display: none;">
+        <br>
+        <h1 style="text-align : center">Login & Registration</h1>
+        <br>
+        <div class="container" id="container">
+            <div class="form-container sign-up-container">
+                <div class="lgn-form">
+                    <h1 class="lgn-h1">Create Account</h1>
+                    <div class="social-container">
+                        <a class="lgn-a" href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a class="lgn-a" href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                        <a class="lgn-a" href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <span class="lgn-span">or use your email for registration</span>
+                    <!-- <input class ="lgn-input" type="text" placeholder="Name" /> -->
+                    <input id="sign_up_username" class="lgn-input" type="text" placeholder="Username" />
+                    <input id="sign_up_password" class="lgn-input" type="password" placeholder="Password" />
+                    <button class="lgn-button" onclick="sign_up()">Sign Up</button>
+                    <p id="signupok" style="display: none; color: green;">Success now you can login!</p>
+                    <p id="signupno" style="display: none; color: red;">Something went wrong!</p>
+                </div>
+            </div>
+            <div class="form-container sign-in-container">
+                <div class="lgn-form">
+                    <h1 class="lgn-h1">Sign in</h1>
+                    <div class="social-container">
+                        <a class="lgn-a" href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a class="lgn-a" href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                        <a class="lgn-a" href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <span class="lgn-span" ->or use your account</span>
+                    <input id="sign_in_username" class="lgn-input" type="text" placeholder="Username" />
+                    <input id="sign_in_password" class="lgn-input" type="password" placeholder="Password" />
+                    <!-- <a class ="lgn-a" href="#">Forgot your password?</a> -->
+                    <button class="lgn-button" onclick="log_in()">Sign In</button>
+                    <p id="showerror" style="display :none; color: red;">Wrong username or Password</p>
+                </div>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1 class="lgn-h1">Welcome Back!</h1>
+                        <p class="lgn-p">To keep connected with us please login with your personal info</p>
+                        <button class="ghost lgn-button" id="signIn">Sign In</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1 class="lgn-h1">Hello, Friend!</h1>
+                        <p class="lgn-p">Enter your personal details and start journey with us</p>
+                        <button class="ghost lgn-button" id="signUp">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+    </div>
+    <!-- Login end -->
+
+
+    <div id="findcourse" class="tabcontent middle findcourse-middle" style="display: none;"
+        onscroll="scrolling(event, this)">
+        <div class="stickyfind" style="position: sticky; top: 0; text-align: center;">
+            <h3 style="text-align: center;">Find Course!</h3>
+            <h5>-Below you can specify your priorities-</h5>
+        </div>
+
+        <br />
+
+        <p>You can find courses here.</p>
+
+        <div class="filter">
+
+            <p>Use filter to access the data in our db.</p>
+            <div class="choice">
+                <select data-id="category" class="form-select form-select-sm category"
+                    aria-label=".form-select-sm example">
+                    <option selected value="all">Select Category (All)</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    <option value="3">Four</option>
+                </select>
+                <select data-id="difficulty" class="form-select form-select-sm difficulty"
+                    aria-label=".form-select-sm example">
+                    <option selected value="all">Select Difficulty (All)</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    <option value="3">Four</option>
+                </select>
+                <!-- value'ler donecek deger burdan -->
+                <select data-id="publish_year" class="form-select form-select-sm publish_year"
+                    aria-label=".form-select-sm example">
+                    <option selected value="all">Select Publish Year (All)</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    <option value="3">Four</option>
+                </select>
+                <select data-id="price" class="form-select form-select-sm price" aria-label=".form-select-sm example">
+                    <option selected value="all">Select Price (All)</option>
+                    <option value="0_50">0-50</option>
+                    <option value="51_100">51-100</option>
+                    <option value="100_150">100-150</option>
+                    <option value="151_200">151-200</option>
+                    <option value="201_300">201-300</option>
+                </select>
+                <select data-id="rating" class="form-select form-select-sm rating" aria-label=".form-select-sm example">
+                    <option selected value="all">Select Rating (All)</option>
+                    <option value="1">Above 1</option>
+                    <option value="2">Above 2</option>
+                    <option value="3">Above 3</option>
+                    <option value="4">Above 4</option>
+                </select>
+                <select data-id="duration" class="form-select form-select-sm duration"
+                    aria-label=".form-select-sm example">
+                    <option selected value="all">Duration (All)</option>
+                    <option value="0_50">0 - 50min</option>
+                    <option value="51_100">51 - 100min</option>
+                    <option value="101_150">101 - 151min</option>
+                    <option value="151_200">151 - 200min</option>
+                    <option value="201_350">201 - 350min</option>
+                </select>
+            </div>
+            <br>
+
+
+            <br>
+
+        </div>
+
+
+        <!-- Table to be shown -->
+        <div class="tablecontainer">
+            <div class="specifybtn-wrapper">
+                <div class="specifybtn">
+                    <!-- modal btn -->
+                    <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Assign importance to the criteria
+                    </a>
+                </div>
+            </div>
+            <br>
+            <div class="tbl-wrapper">
+
+
+                <table id="dtBasicExample" class="table table-striped table-bordered table-sm table-hover"
+                    cellspacing="0" width="100%">
+
+                    <thead style="background-color: #F67280; margin-top: 15px;">
+                        <tr>
+                            <th class="th-sm">Category</th>
+                            <th class="th-sm">Title</th>
+                            <th class="th-sm">Organization</th>
+                            <!-- <th class="th-sm">Certificate</th> -->
+                            <th class="th-sm">Rating</th>
+                            <th class="th-sm">Difficulty</th>
+                            <th class="th-sm">Enrolled Students</th>
+                            <th class="th-sm">Price</th>
+                            <th class="th-sm">Price Category</th>
+                            <th class="th-sm">Year</th>
+                            <th class="th-sm">Duration</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody id="table_body" style="background-color: white;">
+                        <!-- <tr>
+                            <td>Tiger Nixon</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
+                            <td>61</td>
+                            <td>2011/04/25</td>
+                            <td>$320,800</td>
+                        </tr> -->
+                    </tbody>
+
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="howto" class="tabcontent middle" style="display: none;">
+        <br>
+        <h1 style="text-align: center;">How to find course</h1>
+        <br>
+
+        <p>You can get help from here</p>
+    </div>
+
+    <div id="aboutus" class="tabcontent middle" style="display: none;">
+        <br>
+        <h1 style="text-align: center;">About us</h1>
+        <br>
+        <p>You can learn who we are</p>
+    </div>
+
+
+    <div id="bicharts" class="tabcontent middle" style="display: none;">
+        <br>
+        <h1 style="text-align: center;">Bicharts</h1>
+        <br>
+        <p>bicharts</p>
+    </div>
+
+
+
+    <!-- Modal -->
+
+
+    <!-- Button trigger modal -->
+
+    <!-- Button trigger modal -->
+    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+    </button> -->
+
+    <div onclick="cannot(event)" class="animat">
+        <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_AQEOul.json" background="Transparent"
+            speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable  modal-lg">
+
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Assign Importance to Variables</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body ">
+                    <p>Custom range slider which can take values [1/9, 9]</p>
+                    <br>
+                    <div class="slider-wrapper-wrapper">
+
+                        <div class="slider-wrapper">
+                            <div class="variable-info">
+                                <p>Price</p>
+                                <p style="text-align: center;">(x)</p>
+                            </div>
+                            <div class="slidecontainer">
+                                <input data-id="price_rating" type="range" min="-8" max="8" step="1" class="slider"
+                                    data-id="price_rating" oninput="showVal(event,this.value)" list="steplist">
+                                <div class="ticks">
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span>
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick t-one">1</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span>
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span><span class="tick">|</span>
+                                </div>
+                                <p id="price_rating" class="pvalue">Value = equal importance</p>
+
+                            </div>
+                            <div class="variable-info">
+                                <p>Rating</p>
+                                <p style="text-align: center;">(y)</p>
+                            </div>
+                        </div>
+                        <div class="splitter"></div> <!-- to split two slider-wrapper -->
+
+                        <div class="slider-wrapper">
+                            <div class="variable-info">
+                                <p>Price</p>
+                                <p style="text-align: center;">(x)</p>
+                            </div>
+                            <div class="slidecontainer">
+                                <input data-id="price_numberofstudents" type="range" min="-8" max="8" step="1"
+                                    class="slider" data-id="price_numberofstudents" oninput="showVal(event,this.value)"
+                                    list="steplist">
+                                <div class="ticks">
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span>
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick t-one">1</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span>
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span><span class="tick">|</span>
+                                </div>
+                                <p id="price_numberofstudents" class="pvalue">Value = equal importance</p>
+
+                            </div>
+                            <div class="variable-info">
+                                <p>Number of Students</p>
+                                <p style="text-align: center;">(y)</p>
+                            </div>
+                        </div>
+                        <div class="splitter"></div>
+
+                        <!-- yeni bas -->
+                        <div class="slider-wrapper">
+                            <div class="variable-info">
+                                <p>Price</p>
+                                <p style="text-align: center;">(x)</p>
+                            </div>
+                            <div class="slidecontainer">
+                                <input data-id="price_duration" type="range" min="-8" max="8" step="1" class="slider"
+                                    oninput="showVal(event,this.value)" list="steplist">
+                                <div class="ticks">
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span>
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick t-one">1</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span>
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span><span class="tick">|</span>
+                                </div>
+                                <p id="price_duration" class="pvalue">Value = equal importance</p>
+
+                            </div>
+                            <div class="variable-info">
+                                <p>Duration</p>
+                                <p style="text-align: center;">(y)</p>
+                            </div>
+                        </div>
+                        <div class="splitter"></div>
+                        <!-- yeni son -->
+
+                        <div class="slider-wrapper">
+                            <div class="variable-info">
+                                <p>Rating</p>
+                                <p style="text-align: center;">(x)</p>
+                            </div>
+                            <div class="slidecontainer">
+                                <input type="range" min="-8" max="8" step="1" class="slider"
+                                    data-id="rating_numberofstudents" oninput="showVal(event,this.value)"
+                                    list="steplist">
+                                <div class="ticks">
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span>
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick t-one">1</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span>
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span><span class="tick">|</span>
+                                </div>
+                                <p id="rating_numberofstudents" class="pvalue">Value = equal importance</p>
+
+                            </div>
+                            <div class="variable-info">
+                                <p>Number of Students</p>
+                                <p style="text-align: center;">(y)</p>
+                            </div>
+                        </div>
+
+
+                        <!-- yeni2 bas -->
+                        <div class="splitter"></div>
+                        <div class="slider-wrapper">
+                            <div class="variable-info">
+                                <p>Rating</p>
+                                <p style="text-align: center;">(x)</p>
+                            </div>
+                            <div class="slidecontainer">
+                                <input type="range" min="-8" max="8" step="1" class="slider" data-id="rating_duration"
+                                    oninput="showVal(event,this.value)" list="steplist">
+                                <div class="ticks">
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span>
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick t-one">1</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span>
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span><span class="tick">|</span>
+                                </div>
+                                <p id="rating_duration" class="pvalue">Value = equal importance</p>
+
+                            </div>
+                            <div class="variable-info">
+                                <p>Duration</p>
+                                <p style="text-align: center;">(y)</p>
+                            </div>
+                        </div>
+                        <!-- yeni2 son -->
+
+                        <!-- yeni3 bas -->
+                        <div class="splitter"></div>
+                        <div class="slider-wrapper">
+                            <div class="variable-info">
+                                <p>Number of Students</p>
+                                <p style="text-align: center;">(x)</p>
+                            </div>
+                            <div class="slidecontainer">
+                                <input type="range" min="-8" max="8" step="1" class="slider"
+                                    data-id="numberofstudents_duration" oninput="showVal(event,this.value)"
+                                    list="steplist">
+                                <div class="ticks">
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span>
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick t-one">1</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span>
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span><span class="tick">|</span>
+                                </div>
+                                <p id="numberofstudents_duration" class="pvalue">Value = equal importance</p>
+
+                            </div>
+                            <div class="variable-info">
+                                <p>Duration</p>
+                                <p style="text-align: center;">(y)</p>
+                            </div>
+                        </div>
+                        <!-- yeni3 son -->
+
+
+
+                        <h4 class="error">Your preferences are not consistent. You may either change them or "Close"
+                            simply to clear all preferences</h4>
+                        <h4 class="successf">Your preferences are consistent!</h4>
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button id="clsBtn" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-warning" onclick="reset()">Reset</button>
+                    <button type="button" class="btn btn-success" onclick="ok()">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="./script.js"></script>
+
+</body>
+
+</html>

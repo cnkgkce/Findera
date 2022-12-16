@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <!-- CSS JS bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+
+    <!-- <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script> -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css" rel="stylesheet" />
+    <!-- MDB -->
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script> -->
+
+
+    <!-- CSS BURDA-->
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: calc(100vh - 20px);
+            background: rgb(230, 230, 230);
+            min-width: 900px;
+        }
+
+
+        h3 {
+            font-weight: 300;
+        }
+
+        h5 {
+            font-weight: 100;
+        }
+
+        h1 {
+            letter-spacing: 5px;
+            font-weight: 100;
+        }
+
+        .firsth {
+            font-weight: 500;
+        }
+
+        .topbar-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .topbar-wrapper {
+            text-align: center;
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-color: #222831;
+            width: 70%;
+            /* height: 150px; */
+            height: 70px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin: auto;
+            margin-top: 20px;
+            gap: 20px;
+            outline: 2px solid rgba(83, 53, 74, 0.333);
+            outline-offset: 2px;
+            transition: outline-offset 0.5s, background .5s;
+            -webkit-box-shadow: -1px -2px 47px 17px rgba(186, 186, 186, 0.75);
+            -moz-box-shadow: -1px -2px 47px 17px rgba(186, 186, 186, 0.75);
+            box-shadow: -1px -2px 47px 17px rgba(186, 186, 186, 0.75);
+            border-radius: 4px;
+
+        }
+
+        .topbar:hover {
+            background-color: rgb(57, 62, 70);
+            outline: 3px solid white(244, 0, 0);
+            outline-offset: 0px;
+        }
+
+        .topbar:hover .topbarbtn {
+            outline-color: rgb(255, 46, 99);
+        }
+
+        .topbarbtn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+            /* green; */
+            outline: 2px solid rgb(57, 62, 70);
+            outline-offset: 4px;
+            transition: outline 0.5s, outline-offset 0.5s, background 1s, border 1s;
+            border-radius: 4px;
+            /* a'nın rengi icin color: #975bf2; */
+
+        }
+
+        .topbar:hover .topbarbtn:hover {
+            background-color: #00ADB5;
+            outline-color: rgb(82, 97, 107);
+            outline-offset: 0px;
+            border-color: transparent;
+
+            /* a'nın rengi icin color: #975bf2; */
+
+        }
+
+        .topbar .topbarbtn a {
+            /* padding: 10px 25px; */
+            padding: 5px 50px;
+            text-decoration: none;
+            text-align: center;
+            margin: auto;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 19px;
+            color: white;
+            transition: color 1s;
+            cursor: pointer;
+        }
+
+
+        .topbarbtn:hover a:hover {
+            color: rgb(238, 238, 238);
+        }
+
+        .middle {
+            /* text-align: center; */
+            overflow-y: auto;
+            width: 70%;
+            height: calc(100vh - 200px - 10px);
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            margin: auto;
+            margin-top: 30px;
+            background: rgb(245, 245, 245);
+            /* rgb(246, 114, 128); */
+            border-radius: 5px;
+            outline: 2px solid trasparent;
+            outline-offset: 4px;
+            transition: outline-offset 0.5s;
+        }
+
+        .middle::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            background-color: #F5F5F5;
+        }
+
+        .middle::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+            background-color: white;
+        }
+
+        .middle::-webkit-scrollbar-thumb {
+            background-color: #38E54D;
+        }
+
+        .activebtn {
+            background: rgb(255, 46, 99);
+        }
+
+        .stickyfind {
+            position: absolute;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+            border: 2px solidrgb(252, 227, 138);
+            transition: opacity 1.2s, transform 1.2s;
+            padding: 15px;
+        }
+
+
+        .filter {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .choice {
+            display: flex;
+            gap: 5px;
+        }
+
+        .pagination {
+            justify-content: center;
+        }
+
+        .paginationup {
+            display: flex;
+            width: 80%;
+        }
+
+        .pagination-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .howmany {
+            width: 70px;
+        }
+
+        .howmany-wrapper {
+            display: flex;
+            position: relative;
+            align-items: center;
+        }
+
+        .howmanyp {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .howmanyp p {
+            margin: 0px 3px;
+        }
+
+        .search {
+            display: flex;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            right: 0;
+            width: 150px;
+        }
+
+        .searchp-wrapper p {
+            margin: 0px;
+            text-align: center;
+        }
+
+        .searchp-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .searchinput-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0px;
+            margin: 0px;
+            margin-left: 4px;
+        }
+
+
+        .specifybtn-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .specifybtn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+            width: 50%;
+            /* green; */
+            outline: 2px solid white;
+            outline-offset: 1px;
+            transition: outline 0.5s, outline-offset 0.5s, background 1s, border 1s;
+            border-radius: 2px;
+            /* give color to parent which alsogoes to a */
+
+        }
+
+        .specifybtn a {
+            width: 100%;
+            height: 100%;
+            padding: 8px 0;
+            text-decoration: none;
+            text-align: center;
+            margin: auto;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            transition: color 1s;
+            cursor: pointer;
+        }
+
+        .specifybtn:hover {
+            background-color: #9CFF2E;
+            outline: 3px solid white;
+            outline-offset: 0px;
+            border-color: transparent;
+            color: black;
+
+        }
+
+
+
+
+        /* slider */
+        .slidecontainer {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 4px;
+            margin: auto;
+            /* yeni */
+            /* arkadaki cubugun heighti */
+            background: rgb(234, 234, 234);
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+
+        .slider:hover {
+            opacity: 1;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 7px;
+            height: 35px;
+
+            background: rgb(255, 46, 99);
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            background: #4d0000;
+            cursor: pointer;
+        }
+
+
+
+        .ticks {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        .tick {
+            font-weight: 200;
+        }
+
+
+        /* slider */
+
+
+
+        .pvalue {
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            gap: 30px;
+            flex: 1;
+
+        }
+
+        .variable-info {
+            flex: 20;
+            margin-top: -10px;
+        }
+
+        .slider-wrapper-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .splitter {
+            width: 100%;
+            height: 1px;
+            margin-bottom: 50px;
+            background-color: rgb(222, 222, 222);
+        }
+
+        /* scrollbar for modal*/
+        .modal-body::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            background-color: #F5F5F5;
+        }
+
+        .modal-body::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+            background-color: white;
+        }
+
+        .modal-body::-webkit-scrollbar-thumb {
+            background-color: #38E54D;
+        }
+
+        body {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .animat {
+            position: absolute;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 55555;
+            background: rgba(0, 0, 0, 0.637);
+
+        }
+
+
+        .t-one {
+            font-size: 19px;
+            font-weight: 400;
+        }
+
+        .tbl-wrapper {
+            background: white;
+            padding: 10px;
+        }
+
+        .dataTables_filter label,
+        dataTables_length label {
+            padding-bottom: 10px;
+        }
+
+        .current {
+            background: #F67280 !important;
+        }
+
+
+        .modal-title {
+            font-weight: 500;
+        }
+
+        .btn-close {
+            font-size: red !important;
+        }
+
+        @media screen and (max-width: 1150px) {
+
+            .topbar .topbarbtn a {
+                width: 150px;
+                padding: 0px;
+                font-size: 20px;
+            }
+        }
+
+        @media screen and (max-width: 970px) {
+
+
+            .topbar .topbarbtn a {
+                width: 140px;
+                padding: 0;
+                font-size: 19px;
+            }
+        }
+
+        @media screen and (max-width: 950) {
+
+
+            .topbar .topbarbtn a {
+                width: 150px;
+                padding: 0;
+                font-size: 15px;
+            }
+        }
+
+
+        /* new */
+
+        table.dataTable thead .sorting:after,
+        table.dataTable thead .sorting:before,
+        table.dataTable thead .sorting_asc:after,
+        table.dataTable thead .sorting_asc:before,
+        table.dataTable thead .sorting_asc_disabled:after,
+        table.dataTable thead .sorting_asc_disabled:before,
+        table.dataTable thead .sorting_desc:after,
+        table.dataTable thead .sorting_desc:before,
+        table.dataTable thead .sorting_desc_disabled:after,
+        table.dataTable thead .sorting_desc_disabled:before {
+            bottom: .5em;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <!-- topbar ve icindeki link butonları -->
+    <div class="topbar-wrapper">
+        <br>
+        <h1 class="firsth">www.FindCourse.boun.edu.tr</h1>
+        <ul class="topbar">
+            <li class="topbarbtn activebtn" onclick="openTab(event, 'home')">
+                <a>Home</a>
+            </li>
+            <li class="topbarbtn" onclick="openTab(event, 'findcourse')">
+                <a>Find Course</a>
+            </li>
+            <li class="topbarbtn" onclick="openTab(event, 'howto')">
+                <a>How To</a>
+            </li>
+            <li class="topbarbtn" onclick="openTab(event, 'aboutus')">
+                <a>About Us</a>
+            </li>
+        </ul>
+    </div>
+
+
+    <div id="home" class="tabcontent middle">
+        <br>
+        <h1 style="text-align : center">Welcome to Findera!</h1>
+        <br>
+        <h1></h1>
+    </div>
+    <div id="findcourse" class="tabcontent middle findcourse-middle" style="display: none;"
+        onscroll="scrolling(event, this)">
+        <div class="stickyfind" style="position: sticky; top: 0; text-align: center;">
+            <h3 style="text-align: center;">Find Course!</h3>
+            <p>Findera is </p>
+        </div>
+
+        <br />
+
+        <p>You can find courses here.</p>
+
+        <div class="filter">
+
+            <p>Use filter to access the data in our db.</p>
+            <div class="choice">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <option selected>Select Business (All)</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    <option value="3">Four</option>
+                </select>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <option selected>Select Topic (All)</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    <option value="3">Four</option>
+                </select>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <option selected>Select Price (All)</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    <option value="3">Four</option>
+                </select>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <option selected>Years (All)</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    <option value="3">Four</option>
+                </select>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <option selected>Years (All)</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    <option value="3">Four</option>
+                </select>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <option selected>Years (All)</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    <option value="3">Four</option>
+                </select>
+            </div>
+            <br>
+
+
+            <br>
+
+        </div>
+
+
+        <!-- Table to be shown -->
+        <div class="tablecontainer">
+            <div class="specifybtn-wrapper">
+                <div class="specifybtn">
+                    <!-- modal btn -->
+                    <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Assign importance to the criteria
+                    </a>
+                </div>
+            </div>
+            <br>
+            <div class="tbl-wrapper">
+
+
+                <table id="dtBasicExample" class="table table-striped table-bordered table-sm table-hover"
+                    cellspacing="0" width="100%">
+
+                    <thead style="background-color: #F67280; margin-top: 15px;">
+                        <tr>
+                            <th class="th-sm">Name
+                            </th>
+                            <th class="th-sm">Position
+                            </th>
+                            <th class="th-sm">Office
+                            </th>
+                            <th class="th-sm">Age
+                            </th>
+                            <th class="th-sm">Start date
+                            </th>
+                            <th class="th-sm">Salary
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody style="background-color: white;">
+                        <tr>
+                            <td>Tiger Nixon</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
+                            <td>61</td>
+                            <td>2011/04/25</td>
+                            <td>$320,800</td>
+                        </tr>
+                        <tr>
+                            <td>Garrett Winters</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>63</td>
+                            <td>2011/07/25</td>
+                            <td>$170,750</td>
+                        </tr>
+                        <tr>
+                            <td>Ashton Cox</td>
+                            <td>Junior Technical Author</td>
+                            <td>San Francisco</td>
+                            <td>66</td>
+                            <td>2009/01/12</td>
+                            <td>$86,000</td>
+                        </tr>
+                        <tr>
+                            <td>Cedric Kelly</td>
+                            <td>Senior Javascript Developer</td>
+                            <td>Edinburgh</td>
+                            <td>22</td>
+                            <td>2012/03/29</td>
+                            <td>$433,060</td>
+                        </tr>
+                        <tr>
+                            <td>Airi Satou</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>33</td>
+                            <td>2008/11/28</td>
+                            <td>$162,700</td>
+                        </tr>
+                        <tr>
+                            <td>Brielle Williamson</td>
+                            <td>Integration Specialist</td>
+                            <td>New York</td>
+                            <td>61</td>
+                            <td>2012/12/02</td>
+                            <td>$372,000</td>
+                        </tr>
+                        <tr>
+                            <td>Herrod Chandler</td>
+                            <td>Sales Assistant</td>
+                            <td>San Francisco</td>
+                            <td>59</td>
+                            <td>2012/08/06</td>
+                            <td>$137,500</td>
+                        </tr>
+                        <tr>
+                            <td>Rhona Davidson</td>
+                            <td>Integration Specialist</td>
+                            <td>Tokyo</td>
+                            <td>55</td>
+                            <td>2010/10/14</td>
+                            <td>$327,900</td>
+                        </tr>
+                        <tr>
+                            <td>Colleen Hurst</td>
+                            <td>Javascript Developer</td>
+                            <td>San Francisco</td>
+                            <td>39</td>
+                            <td>2009/09/15</td>
+                            <td>$205,500</td>
+                        </tr>
+                        <tr>
+                            <td>Sonya Frost</td>
+                            <td>Software Engineer</td>
+                            <td>Edinburgh</td>
+                            <td>23</td>
+                            <td>2008/12/13</td>
+                            <td>$103,600</td>
+                        </tr>
+                        <tr>
+                            <td>Jena Gaines</td>
+                            <td>Office Manager</td>
+                            <td>London</td>
+                            <td>30</td>
+                            <td>2008/12/19</td>
+                            <td>$90,560</td>
+                        </tr>
+                        <tr>
+                            <td>Quinn Flynn</td>
+                            <td>Support Lead</td>
+                            <td>Edinburgh</td>
+                            <td>22</td>
+                            <td>2013/03/03</td>
+                            <td>$342,000</td>
+                        </tr>
+                        <tr>
+                            <td>Charde Marshall</td>
+                            <td>Regional Director</td>
+                            <td>San Francisco</td>
+                            <td>36</td>
+                            <td>2008/10/16</td>
+                            <td>$470,600</td>
+                        </tr>
+                        <tr>
+                            <td>Haley Kennedy</td>
+                            <td>Senior Marketing Designer</td>
+                            <td>London</td>
+                            <td>43</td>
+                            <td>2012/12/18</td>
+                            <td>$313,500</td>
+                        </tr>
+                        <tr>
+                            <td>Tatyana Fitzpatrick</td>
+                            <td>Regional Director</td>
+                            <td>London</td>
+                            <td>19</td>
+                            <td>2010/03/17</td>
+                            <td>$385,750</td>
+                        </tr>
+                        <tr>
+                            <td>Michael Silva</td>
+                            <td>Marketing Designer</td>
+                            <td>London</td>
+                            <td>66</td>
+                            <td>2012/11/27</td>
+                            <td>$198,500</td>
+                        </tr>
+                        <tr>
+                            <td>Paul Byrd</td>
+                            <td>Chief Financial Officer (CFO)</td>
+                            <td>New York</td>
+                            <td>64</td>
+                            <td>2010/06/09</td>
+                            <td>$725,000</td>
+                        </tr>
+                        <tr>
+                            <td>Gloria Little</td>
+                            <td>Systems Administrator</td>
+                            <td>New York</td>
+                            <td>59</td>
+                            <td>2009/04/10</td>
+                            <td>$237,500</td>
+                        </tr>
+                        <tr>
+                            <td>Bradley Greer</td>
+                            <td>Software Engineer</td>
+                            <td>London</td>
+                            <td>41</td>
+                            <td>2012/10/13</td>
+                            <td>$132,000</td>
+                        </tr>
+                        <tr>
+                            <td>Dai Rios</td>
+                            <td>Personnel Lead</td>
+                            <td>Edinburgh</td>
+                            <td>35</td>
+                            <td>2012/09/26</td>
+                            <td>$217,500</td>
+                        </tr>
+                        <tr>
+                            <td>Jenette Caldwell</td>
+                            <td>Development Lead</td>
+                            <td>New York</td>
+                            <td>30</td>
+                            <td>2011/09/03</td>
+                            <td>$345,000</td>
+                        </tr>
+                        <tr>
+                            <td>Yuri Berry</td>
+                            <td>Chief Marketing Officer (CMO)</td>
+                            <td>New York</td>
+                            <td>40</td>
+                            <td>2009/06/25</td>
+                            <td>$675,000</td>
+                        </tr>
+                        <tr>
+                            <td>Caesar Vance</td>
+                            <td>Pre-Sales Support</td>
+                            <td>New York</td>
+                            <td>21</td>
+                            <td>2011/12/12</td>
+                            <td>$106,450</td>
+                        </tr>
+                        <tr>
+                            <td>Doris Wilder</td>
+                            <td>Sales Assistant</td>
+                            <td>Sidney</td>
+                            <td>23</td>
+                            <td>2010/09/20</td>
+                            <td>$85,600</td>
+                        </tr>
+                        <tr>
+                            <td>Angelica Ramos</td>
+                            <td>Chief Executive Officer (CEO)</td>
+                            <td>London</td>
+                            <td>47</td>
+                            <td>2009/10/09</td>
+                            <td>$1,200,000</td>
+                        </tr>
+                        <tr>
+                            <td>Gavin Joyce</td>
+                            <td>Developer</td>
+                            <td>Edinburgh</td>
+                            <td>42</td>
+                            <td>2010/12/22</td>
+                            <td>$92,575</td>
+                        </tr>
+                        <tr>
+                            <td>Jennifer Chang</td>
+                            <td>Regional Director</td>
+                            <td>Singapore</td>
+                            <td>28</td>
+                            <td>2010/11/14</td>
+                            <td>$357,650</td>
+                        </tr>
+                        <tr>
+                            <td>Brenden Wagner</td>
+                            <td>Software Engineer</td>
+                            <td>San Francisco</td>
+                            <td>28</td>
+                            <td>2011/06/07</td>
+                            <td>$206,850</td>
+                        </tr>
+                        <tr>
+                            <td>Fiona Green</td>
+                            <td>Chief Operating Officer (COO)</td>
+                            <td>San Francisco</td>
+                            <td>48</td>
+                            <td>2010/03/11</td>
+                            <td>$850,000</td>
+                        </tr>
+                        <tr>
+                            <td>Shou Itou</td>
+                            <td>Regional Marketing</td>
+                            <td>Tokyo</td>
+                            <td>20</td>
+                            <td>2011/08/14</td>
+                            <td>$163,000</td>
+                        </tr>
+                        <tr>
+                            <td>Michelle House</td>
+                            <td>Integration Specialist</td>
+                            <td>Sidney</td>
+                            <td>37</td>
+                            <td>2011/06/02</td>
+                            <td>$95,400</td>
+                        </tr>
+                        <tr>
+                            <td>Suki Burks</td>
+                            <td>Developer</td>
+                            <td>London</td>
+                            <td>53</td>
+                            <td>2009/10/22</td>
+                            <td>$114,500</td>
+                        </tr>
+                        <tr>
+                            <td>Prescott Bartlett</td>
+                            <td>Technical Author</td>
+                            <td>London</td>
+                            <td>27</td>
+                            <td>2011/05/07</td>
+                            <td>$145,000</td>
+                        </tr>
+                        <tr>
+                            <td>Gavin Cortez</td>
+                            <td>Team Leader</td>
+                            <td>San Francisco</td>
+                            <td>22</td>
+                            <td>2008/10/26</td>
+                            <td>$235,500</td>
+                        </tr>
+                        <tr>
+                            <td>Martena Mccray</td>
+                            <td>Post-Sales support</td>
+                            <td>Edinburgh</td>
+                            <td>46</td>
+                            <td>2011/03/09</td>
+                            <td>$324,050</td>
+                        </tr>
+                        <tr>
+                            <td>Unity Butler</td>
+                            <td>Marketing Designer</td>
+                            <td>San Francisco</td>
+                            <td>47</td>
+                            <td>2009/12/09</td>
+                            <td>$85,675</td>
+                        </tr>
+                        <tr>
+                            <td>Howard Hatfield</td>
+                            <td>Office Manager</td>
+                            <td>San Francisco</td>
+                            <td>51</td>
+                            <td>2008/12/16</td>
+                            <td>$164,500</td>
+                        </tr>
+                        <tr>
+                            <td>Hope Fuentes</td>
+                            <td>Secretary</td>
+                            <td>San Francisco</td>
+                            <td>41</td>
+                            <td>2010/02/12</td>
+                            <td>$109,850</td>
+                        </tr>
+                        <tr>
+                            <td>Vivian Harrell</td>
+                            <td>Financial Controller</td>
+                            <td>San Francisco</td>
+                            <td>62</td>
+                            <td>2009/02/14</td>
+                            <td>$452,500</td>
+                        </tr>
+                        <tr>
+                            <td>Timothy Mooney</td>
+                            <td>Office Manager</td>
+                            <td>London</td>
+                            <td>37</td>
+                            <td>2008/12/11</td>
+                            <td>$136,200</td>
+                        </tr>
+                        <tr>
+                            <td>Jackson Bradshaw</td>
+                            <td>Director</td>
+                            <td>New York</td>
+                            <td>65</td>
+                            <td>2008/09/26</td>
+                            <td>$645,750</td>
+                        </tr>
+                        <tr>
+                            <td>Olivia Liang</td>
+                            <td>Support Engineer</td>
+                            <td>Singapore</td>
+                            <td>64</td>
+                            <td>2011/02/03</td>
+                            <td>$234,500</td>
+                        </tr>
+                        <tr>
+                            <td>Bruno Nash</td>
+                            <td>Software Engineer</td>
+                            <td>London</td>
+                            <td>38</td>
+                            <td>2011/05/03</td>
+                            <td>$163,500</td>
+                        </tr>
+                        <tr>
+                            <td>Sakura Yamamoto</td>
+                            <td>Support Engineer</td>
+                            <td>Tokyo</td>
+                            <td>37</td>
+                            <td>2009/08/19</td>
+                            <td>$139,575</td>
+                        </tr>
+                        <tr>
+                            <td>Thor Walton</td>
+                            <td>Developer</td>
+                            <td>New York</td>
+                            <td>61</td>
+                            <td>2013/08/11</td>
+                            <td>$98,540</td>
+                        </tr>
+                        <tr>
+                            <td>Finn Camacho</td>
+                            <td>Support Engineer</td>
+                            <td>San Francisco</td>
+                            <td>47</td>
+                            <td>2009/07/07</td>
+                            <td>$87,500</td>
+                        </tr>
+                        <tr>
+                            <td>Serge Baldwin</td>
+                            <td>Data Coordinator</td>
+                            <td>Singapore</td>
+                            <td>64</td>
+                            <td>2012/04/09</td>
+                            <td>$138,575</td>
+                        </tr>
+                        <tr>
+                            <td>Zenaida Frank</td>
+                            <td>Software Engineer</td>
+                            <td>New York</td>
+                            <td>63</td>
+                            <td>2010/01/04</td>
+                            <td>$125,250</td>
+                        </tr>
+                        <tr>
+                            <td>Zorita Serrano</td>
+                            <td>Software Engineer</td>
+                            <td>San Francisco</td>
+                            <td>56</td>
+                            <td>2012/06/01</td>
+                            <td>$115,000</td>
+                        </tr>
+                        <tr>
+                            <td>Jennifer Acosta</td>
+                            <td>Junior Javascript Developer</td>
+                            <td>Edinburgh</td>
+                            <td>43</td>
+                            <td>2013/02/01</td>
+                            <td>$75,650</td>
+                        </tr>
+                        <tr>
+                            <td>Cara Stevens</td>
+                            <td>Sales Assistant</td>
+                            <td>New York</td>
+                            <td>46</td>
+                            <td>2011/12/06</td>
+                            <td>$145,600</td>
+                        </tr>
+                        <tr>
+                            <td>Hermione Butler</td>
+                            <td>Regional Director</td>
+                            <td>London</td>
+                            <td>47</td>
+                            <td>2011/03/21</td>
+                            <td>$356,250</td>
+                        </tr>
+                        <tr>
+                            <td>Lael Greer</td>
+                            <td>Systems Administrator</td>
+                            <td>London</td>
+                            <td>21</td>
+                            <td>2009/02/27</td>
+                            <td>$103,500</td>
+                        </tr>
+                        <tr>
+                            <td>Jonas Alexander</td>
+                            <td>Developer</td>
+                            <td>San Francisco</td>
+                            <td>30</td>
+                            <td>2010/07/14</td>
+                            <td>$86,500</td>
+                        </tr>
+                        <tr>
+                            <td>Shad Decker</td>
+                            <td>Regional Director</td>
+                            <td>Edinburgh</td>
+                            <td>51</td>
+                            <td>2008/11/13</td>
+                            <td>$183,000</td>
+                        </tr>
+                        <tr>
+                            <td>Michael Bruce</td>
+                            <td>Javascript Developer</td>
+                            <td>Singapore</td>
+                            <td>29</td>
+                            <td>2011/06/27</td>
+                            <td>$183,000</td>
+                        </tr>
+                        <tr>
+                            <td>Donna Snider</td>
+                            <td>Customer Support</td>
+                            <td>New York</td>
+                            <td>27</td>
+                            <td>2011/01/25</td>
+                            <td>$112,000</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="howto" class="tabcontent middle" style="display: none;">
+        <br>
+        <h1 style="text-align: center;">How to find course</h1>
+        <br>
+
+        <p>You can get help from here</p>
+    </div>
+
+    <div id="aboutus" class="tabcontent middle" style="display: none;">
+        <br>
+        <h1 style="text-align: center;">About us</h1>
+        <br>
+        <p>You can learn who we are</p>
+    </div>
+
+
+    <!-- Modal -->
+
+
+    <!-- Button trigger modal -->
+
+    <!-- Button trigger modal -->
+    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+    </button> -->
+
+    <div onclick="cannot(event)" class="animat">
+        <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_AQEOul.json" background="Transparent"
+            speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable  modal-lg">
+
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Assign Importance to Variables</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body ">
+                    <p>Custom range slider which can take values [1/9, 9]</p>
+                    <br>
+                    <div class="slider-wrapper-wrapper">
+
+                        <div class="slider-wrapper">
+                            <div class="variable-info">
+                                <p>Price&Price</p>
+                                <p style="text-align: center;">(x)</p>
+                            </div>
+                            <div class="slidecontainer">
+                                <input type="range" min="-8" max="8" step="1" class="slider" data-id="0"
+                                    oninput="showVal(event,this.value)" list="steplist">
+                                <div class="ticks">
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span>
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick t-one">1</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span>
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span><span class="tick">|</span>
+                                </div>
+                                <p id="0" class="pvalue">Value = equal importance</p>
+
+                            </div>
+                            <div class="variable-info">
+                                <p>PointGotFromCustomers</p>
+                                <p style="text-align: center;">(y)</p>
+                            </div>
+                        </div>
+                        <div class="splitter"></div> <!-- to split two slider-wrapper -->
+
+                        <div class="slider-wrapper">
+                            <div class="variable-info">
+                                <p>Price&Price</p>
+                                <p style="text-align: center;">(x)</p>
+                            </div>
+                            <div class="slidecontainer">
+                                <input type="range" min="-8" max="8" step="1" class="slider" data-id="1"
+                                    oninput="showVal(event,this.value)" list="steplist">
+                                <div class="ticks">
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span>
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick t-one">1</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span>
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span><span class="tick">|</span>
+                                </div>
+                                <p id="1" class="pvalue">Value = equal importance</p>
+
+                            </div>
+                            <div class="variable-info">
+                                <p>PointGotFromCustomers</p>
+                                <p style="text-align: center;">(y)</p>
+                            </div>
+                        </div>
+                        <div class="splitter"></div>
+
+
+                        <div class="slider-wrapper">
+                            <div class="variable-info">
+                                <p>Price&Price</p>
+                                <p style="text-align: center;">(x)</p>
+                            </div>
+                            <div class="slidecontainer">
+                                <input type="range" min="-8" max="8" step="1" class="slider" data-id="2"
+                                    oninput="showVal(event,this.value)" list="steplist">
+                                <div class="ticks">
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span>
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick t-one">1</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span>
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span><span class="tick">|</span>
+                                </div>
+                                <p id="2" class="pvalue">Value = equal importance</p>
+
+                            </div>
+                            <div class="variable-info">
+                                <p>PointGotFromCustomers</p>
+                                <p style="text-align: center;">(y)</p>
+                            </div>
+                        </div>
+                        <div class="splitter"></div>
+
+
+                        <div class="slider-wrapper">
+                            <div class="variable-info">
+                                <p>Price&Price</p>
+                                <p style="text-align: center;">(x)</p>
+                            </div>
+                            <div class="slidecontainer">
+                                <input type="range" min="-8" max="8" step="1" class="slider" data-id="3"
+                                    oninput="showVal(event,this.value)" list="steplist">
+                                <div class="ticks">
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span>
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick t-one">1</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span>
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span><span class="tick">|</span>
+                                </div>
+                                <p id="3" class="pvalue">Value = equal importance</p>
+
+                            </div>
+                            <div class="variable-info">
+                                <p>PointGotFromCustomers</p>
+                                <p style="text-align: center;">(y)</p>
+                            </div>
+                        </div>
+                        <div class="splitter"></div>
+
+
+                        <div class="slider-wrapper">
+                            <div class="variable-info">
+                                <p>Price&Price</p>
+                                <p style="text-align: center;">(x)</p>
+                            </div>
+                            <div class="slidecontainer">
+                                <input type="range" min="-8" max="8" step="1" class="slider" data-id="4"
+                                    oninput="showVal(event,this.value)" list="steplist">
+                                <div class="ticks">
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span>
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick t-one">1</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span>
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span><span class="tick">|</span>
+                                </div>
+                                <p id="4" class="pvalue">Value = equal importance</p>
+
+                            </div>
+                            <div class="variable-info">
+                                <p>PointGotFromCustomers</p>
+                                <p style="text-align: center;">(y)</p>
+                            </div>
+                        </div>
+                        <div class="splitter"></div>
+
+
+                        <div class="slider-wrapper">
+                            <div class="variable-info">
+                                <p>Price&Price</p>
+                                <p style="text-align: center;">(x)</p>
+                            </div>
+                            <div class="slidecontainer">
+                                <input type="range" min="-8" max="8" step="1" class="slider" data-id="5"
+                                    oninput="showVal(event,this.value)" list="steplist">
+                                <div class="ticks">
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span>
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick t-one">1</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span>
+                                    <span class="tick">|</span><span class="tick">|</span><span
+                                        class="tick">|</span><span class="tick">|</span><span class="tick">|</span>
+                                </div>
+                                <p id="5" class="pvalue">Value = equal importance</p>
+
+                            </div>
+                            <div class="variable-info">
+                                <p>PointGotFromCustomers</p>
+                                <p style="text-align: center;">(y)</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button id="clsBtn" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" onclick="ok()">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- JS BURDA-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <script>
+        const openTab = (e, tabid) => {
+            var i, tabcontent, tabbtns;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            tabbtns = document.getElementsByClassName("topbarbtn");
+            for (i = 0; i < tabbtns.length; i++) {
+                tabbtns[i].className = tabbtns[i].className.replace(" activebtn", "");
+            }
+            document.getElementById(tabid).style.display = "block";
+            e.currentTarget.className += " activebtn";
+        };
+
+        const scrolling = (e, el) => {
+
+/*             fetch('http://127.0.0.1:8000/hello_world')
+                .then((response) => response.json())
+                .then((data) => console.log(data)); */
+
+
+            //console.log(el.scrollTop);
+            var stck = document.getElementsByClassName("stickyfind");
+            if (el.scrollTop > 100) {
+                stck[0].style.opacity = 0;
+                stck[0].style.transform = "translateY(-1000px)";
+
+            } else {
+                stck[0].style.opacity = 1;
+                stck[0].style.transform = "translateY(0)";
+            }
+        }
+
+        const showVal = (e, num) => {
+            var el = document.getElementById(e.currentTarget.getAttribute("data-id"));
+            if (num == 0)
+                el.innerHTML = "Value = equal importance";
+            else {
+                if (num < 0)
+                    num--, el.innerHTML = "x/y = 1/" + (-num);
+                else
+                    num++, el.innerHTML = "x/y = " + num;
+            }
+        }
+
+        const ok = () => {
+            var completed = true;
+            var el = document.getElementsByClassName("animat")[0];
+            el.style.display = "flex";
+            setTimeout(() => {
+
+                el.style.display = "none";
+
+                // do smth
+                if (completed)
+                    document.getElementById("clsBtn").click();
+                else
+                    console.log("Something went wrong CODE : 0");
+
+            }, 3000);
+        }
+
+        $(document).ready(function () {
+            $("#dtBasicExample").DataTable();
+            $(".dataTables_length").addClass("bs-select");
+        });
+
+
+        const cannot = (e) => {
+            e.stopPropagation();
+        }
+    </script>
+
+
+</body>
+
+</html>
