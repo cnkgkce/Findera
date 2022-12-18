@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Findera</title>
 
-
+    <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <!-- CSS JS bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
 
     <!-- <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script> -->
@@ -39,7 +39,8 @@
     <!-- topbar ve icindeki link butonları -->
     <div class="topbar-wrapper">
         <br>
-        <h1 class="firsth">Findera</h1>
+
+        <h1 class="firsth"><i>Findera</i></h1>
         <ul class="topbar">
             <li id="homebtn" class="topbarbtn activebtn" onclick="openTab(event, 'home')">
                 <a>Home</a>
@@ -61,8 +62,14 @@
             </li>
 
             <li id="aboutusbtn" class="topbarbtn" onclick="openTab(event, 'aboutus')" style="display: none;">
-                <a>About Us</a>
+                <a>Team</a>
             </li>
+
+            <li id="contactbtn" class="topbarbtn" onclick="openTab(event, 'contact')" style="display: none;">
+                <a>Contact Us!</a>
+            </li>
+
+
             <li id="logoutbtn" class="topbarbtn" onclick="openTab(event, 'logouttab')" style="display: none;">
                 <a>Logout</a>
             </li>
@@ -72,26 +79,13 @@
 
     <div id="home" class="tabcontent middle">
         <br>
-        <h1 style="text-align : center">Welcome to Our DSS Project!</h1>
-        <br>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem fugit quo enim deserunt aliquid sapiente
-            vitae facere amet. Natus non illum tenetur mollitia libero harum ex reiciendis molestias cum. Veritatis,
-            quidem. Eveniet laudantium totam quam illum consectetur labore aliquam fugiat, velit exercitationem itaque
-            cupiditate delectus ea asperiores, similique tempora neque repudiandae dicta alias officiis dolores enim, ab
-            unde. Quos, repellendus. Veniam quos natus magnam aliquam, quasi dolores blanditiis non sequi enim
-            perspiciatis a possimus aut, unde facilis? Blanditiis odio molestias eius inventore possimus atque ea iusto
-            non voluptatum repellendus amet eaque eum ullam ipsa eveniet reiciendis quibusdam ratione velit neque
-            deserunt est corrupti, officiis saepe harum. Debitis ea mollitia quia dolorum aut iusto, dolorem
-            necessitatibus blanditiis, dolor minus sapiente consequuntur. Ex ut vel sapiente odio repudiandae, doloribus
-            quibusdam beatae nihil accusantium placeat, ducimus quaerat incidunt ipsam asperiores possimus minima
-            deserunt? Numquam veniam ullam sequi placeat nam, hic tenetur ea non aliquid distinctio vero cumque aut
-            voluptatum? Quaerat perferendis amet quas. Nihil provident eveniet fugiat veritatis perspiciatis vero
-            accusantium repellat totam cumque maxime, quibusdam ratione minus quaerat, voluptas minima harum deserunt,
-            quas alias quasi nam cum optio accusamus omnis. Nesciunt doloribus blanditiis natus sit numquam amet
-            eligendi optio, odit dignissimos reiciendis quia quam ratione eveniet accusantium, sunt deleniti magni
-            repudiandae, quis fugiat. Fugit suscipit, provident ullam aperiam vel dignissimos minus deleniti enim illum
-            molestiae impedit voluptate eligendi quos quis. Sequi cum animi ducimus, minus quas quam facilis! Dolore
-            assumenda nulla minima et quasi odio, in nobis doloribus. Voluptatum dolorum ipsa nam.</p>
+        <div class="container" style="text-align: center;"> 
+        <img src="images/monkey1.png" alt="" style="height: 200px;width:fixed;display: flex;margin: auto;padding: 10px;"><br>
+           <h1>Welcome to <i>Findera</i>!</h1>
+           <h4>Are You Trouble In Choosing The Best Course For You In Coursera? You Are In The Right Place!</h4><br><br>
+            <p>Findera is a web application that supports users in finding right online courses from Coursera depending on their preferences. A user initially selects the category,rating,price, difficulty, publish year and number of enrolled students when they want to start a new online course in Coursera depending on their preferences.</p>
+            <p>Please Register and Login our system to find your best course in Coursera!</p>
+        </div>
     </div>
 
     <!-- Login start -->
@@ -161,8 +155,7 @@
             <h5>-Below you can specify your priorities-</h5>
         </div>
 
-        <br />
-
+    
         <p>You can find courses here.</p>
 
         <div class="filter">
@@ -279,27 +272,53 @@
 
     </div>
 
-    <div id="howto" class="tabcontent middle" style="display: none;">
+    <div id="howto" class="tabcontent middle" style="display: none;text-align: center;">
         <br>
-        <h1 style="text-align: center;">How to find course</h1>
-        <br>
-
-        <p>You can get help from here</p>
+        <h1 style="text-align: center;">How To Use Findera?</h1>
+        <img src="images/howto.png" alt="" style="padding: 100px;height: 750px;width: 1000x;">
+      
     </div>
 
-    <div id="aboutus" class="tabcontent middle" style="display: none;">
+    <div id="aboutus" class="tabcontent middle" style="display: none;text-align: center;">
         <br>
-        <h1 style="text-align: center;">About us</h1>
-        <br>
-        <p>You can learn who we are</p>
+        <img src="images/team.jpg" alt="" style="text-align: center;width: 1000px;padding: 20px;">
+        <br><br>
+    
     </div>
 
+
+    <div id="contact" class="tabcontent middle" style="display: none;text-align: center;">
+        <h1>Contact Us!</h1>
+       
+            <form>      
+                <input name="name" type="text" class="feedback-input" placeholder="Name" />   
+                <input name="email" type="text" class="feedback-input" placeholder="Email" />
+                <textarea name="text" class="feedback-input" placeholder="Comment"></textarea>
+                <input type="submit" value="SUBMIT"/>
+              </form>
+                <img src="images/boun.jpg" alt="" style="text-align: center;width: 1000px;height: 500px;padding: 10px;">
+              
+    
+     
+    </div>
+
+
+
+    <!--- BI CHARTS PAGE -->
 
     <div id="bicharts" class="tabcontent middle" style="display: none;">
-        <br>
-        <h1 style="text-align: center;">Bicharts</h1>
-        <br>
-        <p>bicharts</p>
+        <div class = "image-wrapper">
+            <div class="images">
+                <img id = "1" class = "img" src="./images/a.jpeg" style="display: none;" />
+                <img id = "2" class = "img" src="./images/b.jpeg" style="display: none;" />
+                <img id = "3" class="img" src="./images/c.jpeg" />
+            </div>
+            <div class="imagebtns">
+                <button data-id="1" type="button" class="btn btn-primary" onclick="changeImg(event)">Chart 1</button>
+                <button data-id="2" type="button" class="btn btn-primary" onclick="changeImg(event)">Chart 2</button>
+                <button data-id="3" type="button" class="btn btn-primary" onclick="changeImg(event)">Chart 3</button>
+            </div>
+        </div>
     </div>
 
 

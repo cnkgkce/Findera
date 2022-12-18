@@ -149,6 +149,7 @@ function log_in() {
         document.getElementById("findcoursebtn").style.display = "flex";
         document.getElementById("howtobtn").style.display = "flex";
         document.getElementById("bichartsbtn").style.display = "flex";
+        document.getElementById("contactbtn").style.display = "flex";
         document.getElementById("aboutusbtn").style.display = "flex";
         document.getElementById("homebtn").click();
         document.getElementById("showerror").style.display = "none";
@@ -157,6 +158,7 @@ function log_in() {
         document.getElementById("logoutbtn").style.display = "none";
         document.getElementById("findcoursebtn").style.display = "none";
         document.getElementById("howtobtn").style.display = "none";
+        document.getElementById("contactbtn").style.display = "none";
         document.getElementById("bichartsbtn").style.display = "none";
         document.getElementById("aboutusbtn").style.display = "none";
         document.getElementById("showerror").style.display = "block";
@@ -172,6 +174,7 @@ function log_out() {
     document.getElementById("findcoursebtn").style.display = "none";
     document.getElementById("howtobtn").style.display = "none";
     document.getElementById("bichartsbtn").style.display = "none";
+    document.getElementById("contactbtn").style.display = "none";
     document.getElementById("aboutusbtn").style.display = "none";
     document.getElementById("homebtn").click();
 }
@@ -272,7 +275,7 @@ function takeData(what){
 
       if(what == "okey"){
         console.log("AHP Value : ", data.ahp)
-        if(parseFloat(data.ahp) >= 0.01){
+        if(parseFloat(data.ahp) >= 0.1){
           document.getElementsByClassName("successf")[0].style.display = "none";
           document.getElementsByClassName("error")[0].style.display =
             "block";
@@ -336,3 +339,12 @@ signUpButton.addEventListener("click", () => {
 signInButton.addEventListener("click", () => {
   container.classList.remove("right-panel-active");
 });
+
+
+
+function changeImg(e){
+  els = document.getElementsByClassName("img");
+  for(var i = 0; i<els.length; i++)
+    els[i].style.display = "none";
+  document.getElementById(e.currentTarget.getAttribute("data-id")).style.display = "flex"
+}

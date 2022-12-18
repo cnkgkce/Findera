@@ -116,7 +116,7 @@ def getData(request):
     variables = ahpy.Compare(name='Variables', comparisons=variable_comparisons, precision=9, random_index='saaty')
     print("weights", variables.target_weights)
     print("consistency_ratio", variables.consistency_ratio)
-    if variables.consistency_ratio < 0.01:
+    if variables.consistency_ratio < 0.1:
         print("Consistent!")
         sump = 0
         sumr = 0
